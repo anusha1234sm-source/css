@@ -12,7 +12,7 @@
 <body>
     <div class="container mt-5"> 
         <div class="card" style="width:600px;">
-        <h4 class="display-4 text-primary"><strong>Online Bakery Shop- Feedback Form  </strong></h4>
+        <h4 class="display-5 text-primary"><strong>Online Bakery Shop- Feedback Form  </strong></h4>
         <div class="form-group mr-5 ml-5">
       <label for="name">Name:</label>
       <input type="text" class="form-control" id="text"placeholder="Enter your full name" name="name">
@@ -29,11 +29,25 @@
 <div class="form-check-inline">
   <label class="form-check-label">
     <input type="checkbox" class="form-check-input" value="">E-mail
-  </label> </div>
-  <input type="range" class="form-control-range" name="range">
+  </label> </div> <br>
+
+<div class="form-group mt-3">
+Satisfaction Level (1-10) <br>
+      <input type="range" class="form-control-range" name="range">
     </div>
-
-
-
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <label for="sel1"> Type of order </label>
+    <select class="form-control" id="sel1">
+      <option> Select an option </option>
+    <option> Cake </option>
+    <option> Cookies </option>
+    <option>Pastries</option>
+</select>
+<div class="d-grid mt-4">
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Submit Feedback</button>
+        </div>
+      </form>
+    </div>
+  </div>
+    </div>
+</body>
+</html>

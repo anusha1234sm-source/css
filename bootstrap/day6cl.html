@@ -10,9 +10,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container"> 
-        <h1 class="display-1 text-white bg-danger"><strong>Feedback Page </strong></h1>
- <div class="form-group mt-3">
+    <div class="container mt-5"> 
+      <div class="card" style="width: 500px;">
+        <h1 class="display-5 text-white bg-danger"><strong>Feedback Page </strong></h1>
+ <div class="form-group mr-4 ml-4">
 <label for="name" >Name:</label>
 <input type="text" class="form-control" id="name" placeholder="Enter Your Name">
  <label for="email"> E-mail Address:</label>
@@ -25,20 +26,13 @@
     <option>YouTube</option>
     <option>Telegram</option>
   </select>
-  <h3> Satisfaction level </h3>
-<div class="form-check-inline">
-  <label class="form-check-label">
-    <input type="radio" class="form-check-input "name="optradio">Option 1
-  </label>
-</div>
-<div class="form-check-inline">
-  <label class="form-check-label">
-    <input type="radio" class="form-check-input"name="optradio" >Option 2
-  </label>
-
-
-
-
- 
- 
- <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="form-group mt-3">
+Satisfaction Level (1-5) <br>
+      <input type="range" class="form-control-range" name="range">
+    </div>
+ <button type="submit" class="btn btn-primary btn-block">Submit</button>
+ </div>
+      </div>
+    </div>
+</body>
+</html>

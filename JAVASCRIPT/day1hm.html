@@ -1,0 +1,47 @@
+
+<html>
+<body>   
+<script language = "javascript" type = "text/javascript">
+    document.write("Simple calculator for a small grocery shop")
+// Create variables for item names
+var x = "Rice";
+var y = "Sugar";
+var z = "Wheat";
+
+// Create variables for prices (per kg)
+var priceRice = 60;
+ var priceSugar = 45;
+  var priceWheat = 55;
+
+// Create variables for quantities purchased (in kg)
+ var qtyRice = 2;
+ var qtySugar = 3;
+ var qtyWheat = 4;
+
+// Calculate cost for each item
+var costRice = priceRice * qtyRice;
+ var costSugar = priceSugar * qtySugar;
+ var costWheat = priceWheat * qtyWheat;
+
+// Display individual costs
+console.log("Cost of " + x + ": " + costRice);
+console.log("Cost of " + y + ": " + costSugar);
+console.log("Cost of " + z + ": " + costWheat);
+
+// Cal total bill
+ var totalBill = costRice + costSugar + costWheat;
+console.log("Total Bill: " + totalBill);
+
+// Change quantity of one item (Sugar)
+qtySugar = 5;
+costSugar = priceSugar * qtySugar;
+
+// Recalculate total bill
+totalBill = costRice + costSugar + costWheat;
+
+// Display updated total
+console.log("Updated quantity of " + y + ": " + qtySugar + " kg");
+console.log("Updated Total Bill: " + totalBill);
+</script>
+</body>
+</html>
