@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+<script>
+let book = { 
+    title: 'The Alchemist', 
+    author: 'Paulo Coelho',
+    year:'1988', 
+   getSummary: function() {
+    return `The book '{this.title}' was written by {this.author} in {this.year}.`;
+  }
+};
+book.getSummary();
+function printBookSummary(bookObj) {
+    console.log(bookObj.getSummary());
+}
+printBookSummary(book);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let book = {
+  title: "The Alchemist",
+  author: "Paulo Coelho",
+  year: 1988,
+
+  // Method to return a summary sentence
+  getSummary: function() {
+    return `The book '${this.title}' was written by ${this.author} in ${this.year}.`;
+  }
+};
+
+// Function to print the book summary
+function printBookSummary(bookObj) {
+  console.log(bookObj.getSummary());
+}
+
+// Call the function to display the summary
+printBookSummary(book);
