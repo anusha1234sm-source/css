@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #message {
+      color: green;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #feedbackSection {
+      margin-top: 20px;
+    }
+
+    #feedbackText {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Feedback Form</h2>
+
+  <form id="feedbackForm">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="feedback">Your Feedback:</label>
+    <textarea id="feedback" rows="4" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="message"></div>
+
+  <div id="feedbackSection">
+    <p><strong>Name:</strong> <span id="displayName"></span></p>
+    <p><strong>Feedback:</strong> <span id="displayFeedback"></span></p>
+  </div>
+
+  <script>
+    document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // stop page refresh
+
+      // get input values
+      let userName = document.getElementById("name").value;
+      let userFeedback = document.getElementById("feedback").value;
+
+      // display values using getElementById
+      document.getElementById("displayName").textContent = userName;
+      document.getElementById("displayFeedback").textContent = userFeedback;
+
+      // show confirmation message
+      document.getElementById("message").textContent = "Thanks for your feedback!";
+
+      // clear message after 5 seconds
+      setTimeout(function() {
+        document.getElementById("message").textContent = "";
+      }, 5000);
+
+      // reset form
+      document.getElementById("feedbackForm").reset();
+    });
+
+    // color change on hover
+    const feedbackDisplay = document.getElementById("displayFeedback");
+
+    feedbackDisplay.addEventListener("mouseover", function() {
+      feedbackDisplay.style.color = "blue";
+    });
+
+    feedbackDisplay.addEventListener("mouseout", function() {
+      feedbackDisplay.style.color = "black";
+    });
+  </script>
+</body>
+</html>
