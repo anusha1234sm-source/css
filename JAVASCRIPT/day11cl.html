@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book System Example</title>
+</head>
+<body>
+  <h2>Book Information System</h2>
+  <p id="output"></p>
+
+  <script>
+    // Create the Book class
+    class Book {
+      constructor(title, author, price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+      }
+
+      // Getter methods
+      getTitle() {
+        return this.title;
+      }
+
+      getAuthor() {
+        return this.author;
+      }
+
+      // Setter method with validation
+      setPrice(newPrice) {
+        if (typeof newPrice === "number" && newPrice > 0) {
+          this.price = newPrice;
+        } else {
+          document.getElementById("output").innerHTML += 
+            `<p style="color:red;">Invalid price: ${newPrice}</p>`;
+        }
+      }
+
+      // Method to display book details
+      getDetails() {
+        return `Title: ${this.title}<br>Author: ${this.author}<br>Price: $${this.price}`;
+      }
+    }
+
+    // Create an object of the Book class
+    let myBook = new Book("The Alchemist", "Paulo Coelho", 15);
+
+    // Try updating with invalid and valid prices
+    myBook.setPrice(-10); // invalid
+    myBook.setPrice(25);  // valid
+
+    // Display final book details
+    document.getElementById("output").innerHTML += 
+      `<h3>Final Book Details:</h3>${myBook.getDetails()}`;
+  </script>
+</body>
+</html>
