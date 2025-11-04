@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment Filtering System</title>
+</head>
+<body>
+  <h2>📝 Simple Comment Filtering System</h2>
+
+  <script>
+    // Function to filter and analyze comment
+    function filterComment(comment) {
+      // 1️⃣ Replace banned words (case-insensitive)
+      const bannedWords = /bad|ugly|stupid/gi;
+      const cleanedComment = comment.replace(bannedWords, "***");
+
+      // 2️⃣ Count numbers (like 100, 3, etc.)
+      const numbers = comment.match(/\d+/g);
+      const numberCount = numbers ? numbers.length : 0;
+
+      // 3️⃣ Count words starting with a capital letter
+      const capitalWords = comment.match(/\b[A-Z][a-z]*/g);
+      const capitalWordCount = capitalWords ? capitalWords.length : 0;
+
+      // 4️⃣ Return final message
+      return `
+        Cleaned Comment: ${cleanedComment}
+        \nNumbers Found: ${numberCount}
+        \nCapitalized Words: ${capitalWordCount}
+      `;
+    }
+
+    // Test the function
+    const userComment = "I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great.";
+    const result = filterComment(userComment);
+
+    // Display result
+    alert(result);
+    console.log(result);
+  </script>
+</body>
+</html>

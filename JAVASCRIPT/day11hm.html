@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User System Example</title>
+</head>
+<body style="font-family: Arial; margin: 20px;">
+
+  <h2>User Information System</h2>
+
+  <div>
+    <p><strong>Name:</strong> <span id="userName"></span></p>
+    <p><strong>Age:</strong> <span id="userAge"></span></p>
+    <p><strong>Email:</strong> <span id="userEmail"></span></p>
+  </div>
+
+  <h3>Update Email</h3>
+  <input type="text" id="newEmail" placeholder="Enter new email">
+  <button onclick="updateEmail()">Update</button>
+
+  <p id="message" style="font-weight: bold; color: blue;"></p>
+
+  <script>
+    // Define the User class
+    class User {
+      constructor(name, age, email) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+      }
+
+      // Getter methods
+      getName() {
+        return this.name;
+      }
+
+      getAge() {
+        return this.age;
+      }
+
+      // Setter method for email
+      setEmail(newEmail) {
+        if (newEmail.includes('@')) {
+          this.email = newEmail;
+          document.getElementById('message').style.color = 'green';
+          document.getElementById('message').innerText = ' Email updated successfully!';
+        } else {
+          document.getElementById('message').style.color = 'red';
+          document.getElementById('message').innerText = ' Invalid email format!';
+        }
+        this.displayUser(); // update display after attempt
+      }
+
+      // Display user details
+      displayUser() {
+        document.getElementById('userName').innerText = this.getName();
+        document.getElementById('userAge').innerText = this.getAge();
+        document.getElementById('userEmail').innerText = this.email;
+      }
+    }
+
+    // Create user object
+    const user1 = new User('Anusha', 25, 'anusha@example.com');
+    user1.displayUser();
+
+    // Function to update email
+    function updateEmail() {
+      const newEmail = document.getElementById('newEmail').value;
+      user1.setEmail(newEmail);
+    }
+  </script>
+
+</body>
+</html>
