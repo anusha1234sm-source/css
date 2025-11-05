@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Color Change Example</title>
+</head>
+<body>
+
+  <form id="myForm">
+    <input type="text" id="inputText" placeholder="Enter text">
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="demo"></p>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent page reload
+
+      var text = document.getElementById("inputText").value;
+      document.getElementById("demo").innerHTML = text;
+      document.getElementById("demo").style.color = "blue";
+    });
+
+    document.getElementById("demo").addEventListener("mouseover", function() {
+      document.getElementById("demo").style.color = "green";
+    });
+
+    document.getElementById("demo").addEventListener("mouseout", function() {
+      document.getElementById("demo").style.color = "blue";
+    });
+  </script>
+
+</body>
+</html>
