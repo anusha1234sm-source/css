@@ -1,0 +1,10 @@
+//To create database
+use school library
+switched to db school
+
+// To insert values 
+db.book.insert({title: "Introduction to Science", author: "Dr.Smith", available: "true"})
+
+school> db.book.drop()
+true
+school> db.dropschoollibrary()

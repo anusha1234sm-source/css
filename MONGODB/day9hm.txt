@@ -1,0 +1,50 @@
+use data
+switched to db data
+db.products.insert ({
+  "name": "Laptop",
+  "category": "Electronics",
+  "price": 800,
+  "stock": 15
+}, {
+  "name": "Aadujeevitham",
+  "category": "Books",
+  "price": 100,
+  "stock": 11
+}, {
+  "name": "Kitkat",
+  "category": "Chocalates",
+  "price": 55,
+  "stock": 25
+}, {
+  "name": "Mathilukal",
+  "category": "Books",
+  "price":100 ,
+  "stock": 35
+}, {
+  "name": "Television",
+  "category": "Electronics",
+  "price": 1500,
+  "stock": 20
+}, {
+  "name": "Iphone",
+  "category": "Electronics",
+  "price": 2500,
+  "stock": 5
+}, {
+  "name": "Snickers",
+  "category": "Chocalates",
+  "price": 95,
+  "stock": 9
+})
+
+
+db.products.createIndex({category:1})
+category_1
+db.products.getIndexes()
+
+
+db.products.createIndex({price:-1})
+price_-1
+db.products.getIndexes()
+
+db.products.dropIndexes("category_1")

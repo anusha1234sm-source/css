@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 60px;
+      font-family: Arial, sans-serif;
+    }
+    #winner {
+      color: red;
+      font-size: 22px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+     </style>
+    </head>
+      <body>
+
+  <h2> Lottery Draw</h2>
+  <p>Click the button  to select a lucky winner!</p>
+
+  <button class="btn btn-primary" onclick="pickWinner()">Select Winner</button>
+
+  <p id="winner"></p>
+
+  
+  <div class="modal fade" id="winnerModal" tabindex="-1" aria-labelledby="winnerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+     <div class="modal-header">
+   <h5 class="modal-title" id="winnerModalLabel"> Lottery Winner </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+     </div>
+        <div class="modal-body">
+    <p id="modalWinner" style="color:red; font-size:24px; font-weight:bold;"></p>
+   </div>
+  </div>
+ </div>
+  </div>
+
+  <script>
+    var tickets = [101, 205, 309, 412, 523, 634, 745, 856, 967];
+
+    
+    function pickWinner() {
+      var randomIndex = Math.floor(Math.random() * tickets.length);
+      var winner = tickets[randomIndex];
+
+      
+      console.log(" The winning ticket is: " + winner);
+
+      
+      document.getElementById("winner").innerHTML = "Winning Ticket: " + winner;
+
+    
+      document.getElementById("modalWinner").innerHTML = "Ticket " + winner;
+      var modal = new bootstrap.Modal(document.getElementById('winnerModal'));
+      modal.show();
+    }
+  </script>
+</body>
+</html>

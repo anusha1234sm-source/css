@@ -1,0 +1,44 @@
+use books
+switched to db books
+use admin
+switched to db admin
+db.posts.insertMany([
+  {
+    title: "Introduction to MongoDB",
+    author: "Hammer SuckBurg",
+    tags: ["database", "mongodb", "nosql"],
+    publishedDate: new Date("2021-01-15")
+  },
+  {
+    title: "How to Build a Blog App",
+    author: "Leo Dino",
+    tags: ["web", "blog", "javascript"],
+    publishedDate: new Date("2022-02-12")
+  }, 
+  {
+    title: "Introduction to Bootstrap",
+    author: "Albert Einton",
+    tags: ["database", "mongodb", "nosql"],
+    publishedDate: new Date("2023-01-30")
+  },
+  {
+    title: "How to Build a Live  App",
+    author: "James Hallow",
+    tags: ["web", "blog", "javascript"],
+    publishedDate: new Date("2025-02-09")
+  }
+])
+
+
+b.posts.createIndex({author:1})
+author_1
+db.posts.getIndexes()
+
+
+db.posts.createIndex({publishedDate:-1})
+publishedDate_-1
+
+
+db.posts.getIndexes()
+
+db.posts.dropIndex({author:1})
