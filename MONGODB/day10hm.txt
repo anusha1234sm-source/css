@@ -1,0 +1,30 @@
+use mashupdb
+switched to db mashupdb
+db.students.insert([
+  {
+    id: 1,
+    name: "Rahul",
+    mark: 85
+  },
+  {
+    id: 2,
+    name: "Anusha",
+    mark: 92
+  },
+  {
+    id: 3,
+    name: "Arjun",
+    mark: 78
+  },
+  {
+    id: 4,
+    name: "Meera",
+    mark: 88
+  },
+  {
+    id: 5,
+    name: "Kiran",
+    mark: 81
+  }
+])
+

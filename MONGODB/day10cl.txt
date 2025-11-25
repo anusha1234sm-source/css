@@ -1,0 +1,33 @@
+use mashupdb
+switched to db mashupdb
+db.students.insert([
+  {
+    name: "Rahul",
+    class: "10",
+    marks: 85
+  },
+  {
+    name: "Anusha",
+    class: "9",
+    marks: 92
+  },
+  {
+    name: "Arjun",
+    class: "10",
+    marks: 78
+  }
+])
+
+
+
+db.students.createIndex({marks:1})
+marks_-1
+db.students.getIndexes()
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { marks: 1 }, name: 'marks_1' }
+]
+
+db.students.dropIndex({marks:1})
+
+
